@@ -14,7 +14,7 @@ export const Card = ({ value }) => {
     <div className={`card ${showBack ? 'showBack' : ''}`}>
       <div className='card-content' onClick={handleCardClick}>
         <div className='card-front'>
-          <CardsIcon color='#61dbfb' />
+          <CardsIcon color={`${value === 0 ? 'black' : '#61dbfb'}`} />
         </div>
         <div className='card-back'>
           <CardImages value={value} />

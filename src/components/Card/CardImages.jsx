@@ -13,7 +13,7 @@ export const CardImages = ({ value }) => {
   const renderImage = () => {
     switch (value) {
       case 0:
-        return <CardsIcon color='#61dbfb' />
+        return <CardsIcon color='black' />
       case 1:
         return <BasketballSVG color={color} />
       case 2:
