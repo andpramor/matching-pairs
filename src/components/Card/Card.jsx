@@ -13,7 +13,7 @@ export const Card = ({ value }) => {
     <div className={`card ${showBack ? 'showBack' : ''}`}>
       <div className='card-content' onClick={handleCardClick}>
         <div className='card-front'>
-          <CardsIcon color='red' />
+          <CardsIcon color='#61dbfb' />
         </div>
         <div className='card-back'>{value}</div>
       </div>
