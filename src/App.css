@@ -1,0 +1,16 @@
+.app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 10dvh 1fr 10dvh;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+    .app {
+        width: 60%;
+    }
+}

@@ -1,0 +1,18 @@
+.cardsGrid {
+    padding: 1rem;
+    margin: auto;
+    height: 100%;
+    width: fit-content;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.cardsGrid-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

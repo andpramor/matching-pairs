@@ -1,0 +1,62 @@
+.card {
+    height: 100%;
+    aspect-ratio: 2/3;
+    perspective: 2000px;
+}
+
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s cubic-bezier(0.1, 0.22, 0.8, 1.13);
+    transform-style: preserve-3d;
+    box-shadow: 0 0 5px black;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: hsla(259.4117647058824, 100%, 63%, 1);
+    background-image: radial-gradient(
+            circle at 15% 85%,
+            hsla(318, 80%, 97%, 1) 19%,
+            transparent 84%
+        ),
+        radial-gradient(
+            circle at 31% 1%,
+            hsla(161.47058823529412, 99%, 84%, 1) 12%,
+            transparent 85%
+        ),
+        radial-gradient(
+            circle at 88% 87%,
+            hsla(163, 90%, 78%, 1) 3.6400864520532363%,
+            transparent 75.20902830975928%
+        ),
+        radial-gradient(
+            circle at 30% 27%,
+            hsla(314, 91%, 59%, 1) 14%,
+            transparent 90%
+        );
+    background-blend-mode: normal, normal, normal, normal;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card.showBack .card-content {
+    transform: rotateY(-180deg);
+}
+
+.card-front svg {
+    width: 80%;
+}
