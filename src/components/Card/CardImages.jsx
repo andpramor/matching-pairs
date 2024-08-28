@@ -7,9 +7,7 @@ import { GlobeSVG } from '../../shared/Svg/GlobeSVG'
 import { KeySVG } from '../../shared/Svg/KeySVG'
 import { UmbrellaSVG } from '../../shared/Svg/UmbrellaSVG'
 
-export const CardImages = ({ value }) => {
-  const color = 'white'
-
+export const CardImages = ({ value, color = 'white' }) => {
   const renderImage = () => {
     switch (value) {
       case 0:
