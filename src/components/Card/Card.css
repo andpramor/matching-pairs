@@ -45,14 +45,15 @@
     align-items: center;
 }
 
+.card-front svg,
+.card-back svg {
+    width: 80%;
+}
+
 .card-back {
     transform: rotateY(180deg);
 }
 
 .card.showBack .card-content {
     transform: rotateY(-180deg);
-}
-
-.card-front svg {
-    width: 80%;
 }

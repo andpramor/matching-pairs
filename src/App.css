@@ -4,7 +4,7 @@
     padding: 1rem;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: 10dvh 1fr 10dvh;
+    grid-template-rows: 10dvh 30px 1fr 10dvh;
     grid-template-columns: 1fr;
     gap: 1rem;
 }

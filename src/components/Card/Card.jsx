@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Card.css'
 import { CardsIcon } from '../../shared/Svg/CardsIcon'
+import { CardImages } from './CardImages'
 
 export const Card = ({ value }) => {
   const [showBack, setShowBack] = useState(false)
@@ -15,7 +16,9 @@ export const Card = ({ value }) => {
         <div className='card-front'>
           <CardsIcon color='#61dbfb' />
         </div>
-        <div className='card-back'>{value}</div>
+        <div className='card-back'>
+          <CardImages value={value} />
+        </div>
       </div>
     </div>
   )
