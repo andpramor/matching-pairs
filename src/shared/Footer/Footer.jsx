@@ -1,7 +1,9 @@
-import '../shared.css'
+import './Footer.css'
 
 export const Footer = () => {
   return (
-    <footer className='shared-banner'>&#169; 2024. Andrés Prado Morgaz</footer>
+    <footer className='footer'>
+      <a href='https://andrespradomorgaz.com'>Andrés Prado Morgaz</a> &#169; 2024
+    </footer>
   )
 }
