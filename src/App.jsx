@@ -8,7 +8,7 @@ import { useCards } from './hooks/useCards.jsx'
 import { Footer } from './shared/Footer/Footer.jsx'
 import { Header } from './shared/Header/Header.jsx'
 
-// TODO: check CSS for small screens.
+// TODO: check CSS for small screens: cards grid initializes with columns overlapping for some reason.
 // TODO: Control showCardBack when a new game starts, so every card shows front.
 // ? Build an array in App or CardsGrid with the shown cards that I can reset, so a click in a card updates that array instead of a local backShown state?
 

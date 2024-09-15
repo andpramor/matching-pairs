@@ -7,11 +7,11 @@ export const Card = ({ value }) => {
   const [showBack, setShowBack] = useState(false)
 
   const handleCardClick = () => {
-    setShowBack(!showBack)
+    if (value !== 0) setShowBack(!showBack)
   }
 
   return (
-    <div className={`card ${showBack ? 'showBack' : ''}`}>
+    <div className={`card ${value === 0 ? 'card--unclickable' : ''} ${showBack ? 'showBack' : ''}`}>
       <div className='card-content' onClick={handleCardClick}>
         <div className='card-front'>
           <CardsIcon color={`${value === 0 ? 'black' : '#61dbfb'}`} />
