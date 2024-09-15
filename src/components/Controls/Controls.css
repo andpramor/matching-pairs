@@ -1,23 +1,35 @@
 .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .controls-btn {
-    border: 1px solid white;
-    border-radius: 9999px;
-    padding: 4px 8px;
-    cursor: pointer;
-    transition: text-shadow 0.3s;
+  border: 1px solid white;
+  border-radius: 9999px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: text-shadow 0.3s, color 0.3s;
+}
+
+.controls-btn--red {
+  border: 1px solid red;
+}
+
+.controls-btn--hidden {
+  display: none;
 }
 
 .controls-btn:hover {
-    text-shadow: 1px 1px 4px white;
+  text-shadow: 1px 1px 4px white;
+}
+
+.controls-btn--red:hover {
+  color: red;
 }
 
 .controls-btn:active {
-    -webkit-box-shadow: 0 1px 4px inset white;
-    box-shadow: 0 1px 4px inset white;
+  -webkit-box-shadow: 0 1px 4px inset white;
+  box-shadow: 0 1px 4px inset white;
 }
