@@ -9,6 +9,8 @@ import { Footer } from './shared/Footer/Footer.jsx'
 import { Header } from './shared/Header/Header.jsx'
 
 // TODO: check CSS for small screens.
+// TODO: Control showCardBack when a new game starts, so every card shows front.
+// ? Build an array in App or CardsGrid with the shown cards that I can reset, so a click in a card updates that array instead of a local backShown state?
 
 function App () {
   const { cardsValues } = useCards()
