@@ -6,7 +6,7 @@ Matching Pairs is a memory game where you have to click on a card to see what im
 
 ## User Stories
 - [x] User can see a grid with n x n cards (n is an integer). All the cards are faced down initially (hidden state).
-- [ ] User can click a button to start the game. When this button is clicked, a timer will start.
+- [x] User can click a button to start the game. When this button is clicked, a timer will start.
 - [x] User can click on any card to unveil the image underneath it (change it to visible state). The image will be displayed until the user clicks on a 2nd card.
 <b>When the User clicks on the 2nd card:</b>
 - [ ] If there is a match, the 2 cards will be eliminated from the game (either hide/remove them or leave them in the visible state).

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export const useTimer = () => {
   const [time, setTime] = useState(0)
-  const [isRunning, setIsRunning] = useState(true)
+  const [isRunning, setIsRunning] = useState(false)
 
   useEffect(() => {
     if (!isRunning) return
@@ -17,7 +17,7 @@ export const useTimer = () => {
   const hours = Math.floor(time / 360000)
   const minutes = Math.floor((time % 360000) / 6000)
   const seconds = Math.floor((time % 6000) / 100)
-  const milliseconds = time % 100
+  // const milliseconds = time % 100
 
-  return { hours, minutes, seconds, milliseconds, startTimer, stopTimer, resetTimer }
+  return { hours, minutes, seconds, startTimer, stopTimer, resetTimer }
 }

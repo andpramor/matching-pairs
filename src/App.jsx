@@ -9,13 +9,11 @@ import { Footer } from './shared/Footer/Footer.jsx'
 import { Header } from './shared/Header/Header.jsx'
 import { useTimer } from './hooks/useTimer.jsx'
 
-// TODO: check CSS for small screens: cards grid initializes with columns overlapping for some reason.
-
 function App () {
   const [gameStarted, setGameStarted] = useState(false)
   const { cardsValues } = useCards(gameStarted)
   const [showBacks, setShowBacks] = useState(Array(cardsValues.length).fill(false))
-  const { hours, minutes, seconds, milliseconds, startTimer, stopTimer, resetTimer } = useTimer()
+  const { hours, minutes, seconds, startTimer, stopTimer, resetTimer } = useTimer()
 
   const handleStartGame = () => {
     setGameStarted(true)
@@ -27,6 +25,7 @@ function App () {
     stopTimer()
     resetTimer()
   }
+  // TODO: when the last pair is found, stop the timer without reseting it, show the modal with the congrats message and the time, then on modal close, call handleEndGame.
 
   const toggleCard = (index) => {
     setShowBacks((prevShowBacks) => {
@@ -39,8 +38,8 @@ function App () {
   return (
     <div className='app'>
       <Header />
-      <Controls gameStarted={gameStarted} endGame={handleEndGame} startGame={handleStartGame} hours={hours} minutes={minutes} seconds={seconds} milliseconds={milliseconds} />
-      <CardsGrid
+      <Controls gameStarted={gameStarted} endGame={handleEndGame} startGame={handleStartGame} hours={hours} minutes={minutes} seconds={seconds} />
+      <CardsGrid // TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason.
         cardsValues={cardsValues}
         showBacks={showBacks}
         toggleCard={toggleCard}
