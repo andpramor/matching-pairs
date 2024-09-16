@@ -11,7 +11,7 @@ export const useTimer = () => {
   }, [isRunning])
 
   const startTimer = () => setIsRunning(true)
-  const stopTimer = () => setIsRunning(false) // * Stop and reset are separated to enable the existence of a "pause game" button in the future.
+  const stopTimer = () => setIsRunning(false) // * Stop and reset are separated to enable the message with the time on winning.
   const resetTimer = () => setTime(0)
 
   const hours = Math.floor(time / 360000)

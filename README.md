@@ -9,8 +9,8 @@ Matching Pairs is a memory game where you have to click on a card to see what im
 - [x] User can click a button to start the game. When this button is clicked, a timer will start.
 - [x] User can click on any card to unveil the image underneath it (change it to visible state). The image will be displayed until the user clicks on a 2nd card.
 <b>When the User clicks on the 2nd card:</b>
-- [ ] If there is a match, the 2 cards will be eliminated from the game (either hide/remove them or leave them in the visible state).
-- [ ] If there isn't a match, the 2 cards will flip back to their original state (hidden state).
+- [x] If there is a match, the 2 cards will be eliminated from the game (they stay in the visible state and the figure color changes).
+- [x] If there isn't a match, the 2 cards will flip back to their original state (hidden state).
 - [ ] When all the matches have been found, the user sees a dialog showing a congratulations message with a counter displaying the time it took to finish the game.
 
 ## Bonus features
