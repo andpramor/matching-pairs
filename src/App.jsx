@@ -35,6 +35,8 @@ function App () {
     })
   }
 
+  // * NEXT STEP: check if there's a match. Keep track of the last card shown, check if the card being shown has the same value as the last, handle setShowBacks for the three cases: its a pair, so forever shown or add a class to the pair so their no longer shown at all, its not a pair, so both the card being shown and the last one go back to show the front, or there's no last card (first move in the game and first move after every failure to find a pair) so only the clicked card gets manipulated.
+
   return (
     <div className='app'>
       <Header />
