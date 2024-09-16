@@ -17,7 +17,7 @@ function App () {
   const [showBacks, setShowBacks] = useState(Array(cardsValues.length).fill(false))
   const { hours, minutes, seconds, startTimer, stopTimer, resetTimer } = useTimer()
 
-  // TODO: handleWin -> show the modal with the congrats message and the time, then on modal close, call handleEndGame.
+  // TODO: handleWin -> show the modal with the congrats message and the time, then on modal close, call handleEndGame with a "Great!" button.
   const [foundPairs, setFoundPairs] = useState([])
   const [previousCard, setPreviousCard] = useState(null)
   const [isChecking, setIsChecking] = useState(false)
