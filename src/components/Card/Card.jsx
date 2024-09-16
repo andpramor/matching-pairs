@@ -14,7 +14,7 @@ export const Card = ({ value, showBack, onCardClick, found }) => {
           <CardsIcon color={`${value === 0 ? 'black' : '#61dbfb'}`} />
         </div>
         <div className='card-back'>
-          <CardImages value={value} color={found ? 'greenyellow' : 'white'} />
+          <CardImages value={value} color={found ? '#68D89B' : 'white'} />
         </div>
       </div>
     </div>
