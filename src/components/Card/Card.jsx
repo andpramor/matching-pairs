@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import './Card.css'
 import { CardsIcon } from '../../shared/Svg/CardsIcon'
 import { CardImages } from './CardImages'
 
-export const Card = ({ value }) => {
-  const [showBack, setShowBack] = useState(false)
-
+export const Card = ({ value, showBack, onCardClick }) => {
   const handleCardClick = () => {
-    if (value !== 0) setShowBack(!showBack)
+    if (value !== 0) onCardClick()
   }
 
   return (
