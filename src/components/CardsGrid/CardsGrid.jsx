@@ -1,7 +1,7 @@
 import { Card } from '../Card/Card'
 import './CardsGrid.css'
 
-export const CardsGrid = ({ cardsValues, showBacks, toggleCard }) => {
+export const CardsGrid = ({ cardsValues, showBacks, handleCardClick, foundPairs }) => {
   return (
     <ul className='cardsGrid'>
       {cardsValues.map((value, index) => (
@@ -9,7 +9,8 @@ export const CardsGrid = ({ cardsValues, showBacks, toggleCard }) => {
           <Card
             value={value}
             showBack={showBacks[index]}
-            onCardClick={() => toggleCard(index)}
+            onCardClick={() => handleCardClick(index)}
+            found={foundPairs.includes(value)}
           />
         </li>
       ))}
