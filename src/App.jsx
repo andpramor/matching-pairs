@@ -1,6 +1,7 @@
 import './App.css'
 
 import { useState } from 'react'
+import confetti from 'canvas-confetti'
 
 import { CardsGrid } from './components/CardsGrid/CardsGrid.jsx'
 import { Controls } from './components/Controls/Controls.jsx'
@@ -17,7 +18,6 @@ function App () {
   const [showBacks, setShowBacks] = useState(Array(cardsValues.length).fill(false))
   const { hours, minutes, seconds, startTimer, stopTimer, resetTimer } = useTimer()
 
-  // TODO: handleWin -> show the modal with the congrats message and the time, then on modal close, call handleEndGame with a "Great!" button.
   const [foundPairs, setFoundPairs] = useState([])
   const [previousCard, setPreviousCard] = useState(null)
   const [isChecking, setIsChecking] = useState(false)
@@ -35,7 +35,9 @@ function App () {
     setFoundPairs([])
   }
   const handleWin = () => {
+  // TODO: handleWin -> show a modal with the congrats message and the time, then on modal close, call handleEndGame with a "Great!" button.
     stopTimer()
+    confetti()
     console.log('Congrats! Your winning time: ' + hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0'))
   }
 
