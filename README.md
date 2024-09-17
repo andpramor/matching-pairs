@@ -11,7 +11,7 @@ Matching Pairs is a memory game where you have to click on a card to see what im
 <b>When the User clicks on the 2nd card:</b>
 - [x] If there is a match, the 2 cards will be eliminated from the game (they stay in the visible state and the figure color changes).
 - [x] If there isn't a match, the 2 cards will flip back to their original state (hidden state).
-- [ ] When all the matches have been found, the user sees a dialog showing a congratulations message with a counter displaying the time it took to finish the game.
+- [x] When all the matches have been found, the user sees a dialog showing a congratulations message with a counter displaying the time it took to finish the game.
 
 ## Bonus features
 - [ ] User can choose between multiple levels of difficulty (Easy, Medium, Hard). Increased difficulty means: decreasing the time available to complete and/or increasing the number of cards.

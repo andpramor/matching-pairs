@@ -9,6 +9,8 @@ import { useCards } from './hooks/useCards.jsx'
 import { Footer } from './shared/Footer/Footer.jsx'
 import { Header } from './shared/Header/Header.jsx'
 import { useTimer } from './hooks/useTimer.jsx'
+import { Card } from './components/Card/Card.jsx'
+import { Modal } from './components/Modal/Modal.jsx'
 
 // TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason.
 
@@ -17,10 +19,10 @@ function App () {
   const { cardsValues } = useCards(gameStarted)
   const [showBacks, setShowBacks] = useState(Array(cardsValues.length).fill(false))
   const { hours, minutes, seconds, startTimer, stopTimer, resetTimer } = useTimer()
-
   const [foundPairs, setFoundPairs] = useState([])
   const [previousCard, setPreviousCard] = useState(null)
   const [isChecking, setIsChecking] = useState(false)
+  const [showWinModal, setShowWinModal] = useState(false)
 
   const handleStartGame = () => {
     setGameStarted(true)
@@ -35,10 +37,18 @@ function App () {
     setFoundPairs([])
   }
   const handleWin = () => {
-  // TODO: handleWin -> show a modal with the congrats message and the time, then on modal close, call handleEndGame with a "Great!" button.
     stopTimer()
     confetti()
+    openWinModal()
     console.log('Congrats! Your winning time: ' + hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0'))
+  }
+  const openWinModal = () => {
+    // TODO saveWin(tiempo) en la lógica añadir date si es mejor tiempo, tiempo si es el mejor tiempo y sumar 1 al contador de victorias y de partidas totales.
+    setShowWinModal(true)
+  }
+  const handleHideWinModal = () => {
+    setShowWinModal(false)
+    handleEndGame()
   }
 
   const toggleCard = (index) => {
@@ -79,17 +89,34 @@ function App () {
   }
 
   return (
-    <div className='app'>
-      <Header />
-      <Controls gameStarted={gameStarted} endGame={handleEndGame} startGame={handleStartGame} hours={hours} minutes={minutes} seconds={seconds} />
-      <CardsGrid
-        cardsValues={cardsValues}
-        showBacks={showBacks}
-        handleCardClick={handleCardClick}
-        foundPairs={foundPairs}
-      />
-      <Footer />
-    </div>
+    <>
+      <div className='app'>
+        <Header />
+        <Controls gameStarted={gameStarted} startGame={handleStartGame} endGame={handleEndGame} hours={hours} minutes={minutes} seconds={seconds} />
+        {gameStarted
+          ? (
+            <CardsGrid
+              cardsValues={cardsValues}
+              showBacks={showBacks}
+              handleCardClick={handleCardClick}
+              foundPairs={foundPairs}
+            />
+            )
+          : (
+            <div className='app-card'>
+              <Card value={0} />
+              <h2 onClick={handleStartGame}>Start game!</h2>
+            </div>
+            )}
+        <Footer />
+      </div>
+      {showWinModal &&
+        <Modal>
+          <h2>Congrats!</h2>
+          <h3>{hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')}</h3>
+          <button className='app-btn' onClick={handleHideWinModal}>Play again!</button>
+        </Modal>}
+    </>
   )
 }
 
