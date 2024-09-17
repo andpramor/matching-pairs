@@ -41,7 +41,7 @@ const increaseWins = () => {
   if (winsValue === null) {
     localStorage.setItem('wins', 1)
   } else {
-    localStorage.setItem('wins', winsValue + 1)
+    localStorage.setItem('wins', Number(winsValue) + 1)
   }
 }
 const updateBestTime = ({ hours, minutes, seconds }) => {
