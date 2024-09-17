@@ -11,6 +11,7 @@ import { Header } from './shared/Header/Header.jsx'
 import { useTimer } from './hooks/useTimer.jsx'
 import { Card } from './components/Card/Card.jsx'
 import { Modal } from './components/Modal/Modal.jsx'
+import { saveWin } from './services/persistence.js'
 
 // TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason.
 
@@ -43,7 +44,7 @@ function App () {
     console.log('Congrats! Your winning time: ' + hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0'))
   }
   const openWinModal = () => {
-    // TODO saveWin(tiempo) en la lógica añadir date si es mejor tiempo, tiempo si es el mejor tiempo y sumar 1 al contador de victorias y de partidas totales.
+    saveWin({ hours, minutes, seconds }) // I register the win here so it gets saved even if the user doesn't get to close the modal before leaving the app.
     setShowWinModal(true)
   }
   const handleHideWinModal = () => {
@@ -114,7 +115,7 @@ function App () {
         <Modal>
           <h2>Congrats!</h2>
           <h3>{hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')}</h3>
-          <button className='app-btn' onClick={handleHideWinModal}>Play again!</button>
+          <button onClick={handleHideWinModal}>Play again!</button>
         </Modal>}
     </>
   )

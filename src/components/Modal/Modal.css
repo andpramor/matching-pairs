@@ -8,6 +8,7 @@
     backdrop-filter: blur(2px) grayscale(80%);
     display: grid;
     place-items: center;
+    z-index: 9999;
 }
 
 .modal--content {
@@ -18,4 +19,15 @@
     place-items: center;
     gap: 16px;
     background-color: rgba(0,0,0,0.4);
+}
+
+.modal button {
+  border: 1px solid black;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.modal button:hover {
+  box-shadow: 0 0 10px 2px white;
 }

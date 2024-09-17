@@ -28,17 +28,6 @@ path {
   cursor: pointer;
 }
 
-.app-btn {
-  border: 1px solid black;
-  border-radius: 9999px;
-  background-color: white;
-  padding: 4px 8px;
-  cursor: pointer;
-}
-.app-btn:hover {
-  box-shadow: 0 0 10px 2px white;
-}
-
 .app-card h2 {
   color: white;
   cursor: pointer;

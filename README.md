@@ -14,8 +14,8 @@ Matching Pairs is a memory game where you have to click on a card to see what im
 - [x] When all the matches have been found, the user sees a dialog showing a congratulations message with a counter displaying the time it took to finish the game.
 
 ## Bonus features
-- [ ] User can choose between multiple levels of difficulty (Easy, Medium, Hard). Increased difficulty means: decreasing the time available to complete and/or increasing the number of cards.
 - [ ] User can see the game statistics (number of wins/loses, best time for each difficulty level).
+- [ ] User can choose between multiple levels of difficulty (Easy, Medium, Hard). Increased difficulty means: decreasing the time available to complete and/or increasing the number of cards.
 
 ### Project idea
 [Github repo: app-ideas](https://github.com/florinpop17/app-ideas)
