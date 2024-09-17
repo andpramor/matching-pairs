@@ -38,7 +38,7 @@ const increaseGames = () => {
 }
 const increaseWins = () => {
   const winsValue = localStorage.getItem('wins')
-  if (winsValue !== null) {
+  if (winsValue === null) {
     localStorage.setItem('wins', 1)
   } else {
     localStorage.setItem('wins', winsValue + 1)
