@@ -41,7 +41,6 @@ function App () {
     stopTimer()
     confetti()
     openWinModal()
-    console.log('Congrats! Your winning time: ' + hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0'))
   }
   const openWinModal = () => {
     saveWin({ hours, minutes, seconds }) // I register the win here so it gets saved even if the user doesn't get to close the modal before leaving the app.

@@ -5,9 +5,12 @@ import { useState } from 'react'
 import { Modal } from '../Modal/Modal.jsx'
 
 export const Controls = ({ gameStarted, endGame, hours, minutes, seconds }) => {
-  const [showModal, setShowModal] = useState(false)
-  const openModal = () => setShowModal(true)
-  const hideModal = () => setShowModal(false)
+  const [showStatsModal, setShowStatsModal] = useState(false)
+  const openStatsModal = () => setShowStatsModal(true)
+  const hideStatsModal = () => setShowStatsModal(false)
+  const [showResetModal, setShowResetModal] = useState(false)
+  const openResetModal = () => setShowResetModal(true)
+  const hideResetModal = () => setShowResetModal(false)
 
   const handleAbandonGame = () => {
     saveAbandon()
@@ -15,9 +18,8 @@ export const Controls = ({ gameStarted, endGame, hours, minutes, seconds }) => {
   }
   const handleResetStats = () => {
     resetStats()
+    hideResetModal()
   }
-  // TODO add a modal here that opens when pressing stats, add the useState to show or hide it too.
-  // If no stats: No stats registered yet. Try playing!
 
   return (
     <>
@@ -31,15 +33,24 @@ export const Controls = ({ gameStarted, endGame, hours, minutes, seconds }) => {
             )
           : (
             <>
-              <span className='controls-btn' onClick={openModal}>Stats</span>
-              <span className='controls-btn controls-btn--red' onClick={handleResetStats}>Reset stats</span>
+              <span className='controls-btn' onClick={openStatsModal}>Stats</span>
+              <span className='controls-btn controls-btn--red' onClick={openResetModal}>Reset stats</span>
             </>
             )}
       </div>
-      {showModal &&
+      {showStatsModal &&
         <Modal>
-          <span>Hola</span>
-          <button onClick={hideModal}>Close</button>
+          <h4>Your stats</h4>
+          <span>No stats registered yet. Try playing!</span>
+          <button onClick={hideStatsModal}>Close</button>
+        </Modal>}
+      {showResetModal &&
+        <Modal>
+          <h4>Reset stats?</h4>
+          <span className='modal-options'>
+            <button onClick={handleResetStats}>Confirm</button>
+            <button onClick={hideResetModal}>Cancel</button>
+          </span>
         </Modal>}
     </>
   )
