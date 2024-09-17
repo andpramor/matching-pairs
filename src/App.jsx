@@ -13,7 +13,7 @@ import { Card } from './components/Card/Card.jsx'
 import { Modal } from './components/Modal/Modal.jsx'
 import { saveWin } from './services/persistence.js'
 
-// TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason.
+// TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason, as well as the initial card to "start a game" is decentered.
 
 function App () {
   const [gameStarted, setGameStarted] = useState(false)
