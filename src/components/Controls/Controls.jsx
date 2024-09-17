@@ -1,12 +1,16 @@
 import './Controls.css'
 import { Timer } from '../Timer/Timer.jsx'
-import { saveAbandon, resetStats } from '../../services/persistence.js'
+import { saveAbandon, resetStats, getStats } from '../../services/persistence.js'
 import { useState } from 'react'
 import { Modal } from '../Modal/Modal.jsx'
 
 export const Controls = ({ gameStarted, endGame, hours, minutes, seconds }) => {
   const [showStatsModal, setShowStatsModal] = useState(false)
-  const openStatsModal = () => setShowStatsModal(true)
+  const [stats, setStats] = useState(null)
+  const openStatsModal = () => {
+    setStats(getStats())
+    setShowStatsModal(true)
+  }
   const hideStatsModal = () => setShowStatsModal(false)
   const [showResetModal, setShowResetModal] = useState(false)
   const openResetModal = () => setShowResetModal(true)
@@ -41,7 +45,16 @@ export const Controls = ({ gameStarted, endGame, hours, minutes, seconds }) => {
       {showStatsModal &&
         <Modal>
           <h4>Your stats</h4>
-          <span>No stats registered yet. Try playing!</span>
+          {stats
+            ? (
+              <>
+                <span>Games: {stats.games}</span>
+                <span>Wins: {stats.wins ?? 0}</span>
+                {stats.wins &&
+                  <span>Best time: {stats.bestHours + ':' + stats.bestMinutes.toString().padStart(2, '0') + ':' + stats.bestSeconds.toString().padStart(2, '0')}s. Date: {stats.bestDate}</span>}
+              </>
+              )
+            : <span>No stats registered yet. Try playing!</span>}
           <button onClick={hideStatsModal}>Close</button>
         </Modal>}
       {showResetModal &&

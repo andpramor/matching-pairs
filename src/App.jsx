@@ -113,7 +113,7 @@ function App () {
       {showWinModal &&
         <Modal>
           <h2>Congrats!</h2>
-          <h3>{hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')}</h3>
+          <h3>{hours + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')}s</h3>
           <button onClick={handleHideWinModal}>Play again!</button>
         </Modal>}
     </>
