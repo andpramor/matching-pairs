@@ -2,7 +2,7 @@
     padding: 1rem;
     margin: auto;
     height: 100%;
-    width: fit-content;
+    width: 400px;
     display: grid;
     place-content: center;
     grid-template-columns: repeat(3, 1fr);
