@@ -47,6 +47,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  transition: opacity 0.7s; /* In firefox, backface-visibility alone isn't always enough. */
 }
 
 .card-front svg,
@@ -60,4 +61,14 @@
 
 .card.showBack .card-content {
   transform: rotateY(-180deg);
+}
+
+.card.showBack .card-front,
+.card:not(.showBack) .card-back {
+  opacity: 0;
+}
+
+.card.showBack .card-back,
+.card:not(.showBack) .card-front {
+  opacity: 1;
 }
