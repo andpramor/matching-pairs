@@ -1,18 +1,23 @@
 .cardsGrid {
-    padding: 1rem;
-    margin: auto;
-    height: 100%;
-    width: 400px;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
+  padding: 1rem;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .cardsGrid {
+    width: 60%;
+  }
 }
 
 .cardsGrid-item {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }

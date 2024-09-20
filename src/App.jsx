@@ -13,7 +13,7 @@ import { Card } from './components/Card/Card.jsx'
 import { Modal } from './components/Modal/Modal.jsx'
 import { saveWin } from './services/persistence.js'
 
-// TODO: check CSS for small screens: CardsGrid initializes with columns overlapping for some reason, as well as the initial card to "start a game" is decentered.
+// TODO: check CSS for small screens: appears to be decentered.
 // TODO: check why is CardIcon showing when card-back is shown in firefox, given that backface-visibility is usable in firefox...
 
 function App () {
